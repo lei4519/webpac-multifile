@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
 	entry: {
@@ -23,6 +24,9 @@ module.exports = {
 			filename: 'cart.html',
 			template: './src/cart.html',
 			chunks: ['cart']
+		}),
+		new CleanWebpackPlugin({
+			path: path.resolve
 		})
 	]
 	// devtool: '#source-map'
