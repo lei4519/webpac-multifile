@@ -12,8 +12,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: ''
 	},
-	module: {
-	},
+	module: {},
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
@@ -25,8 +24,10 @@ module.exports = {
 			template: './src/cart.html',
 			chunks: ['cart']
 		}),
-		new CleanWebpackPlugin({
-			path: path.resolve
+		new CleanWebpackPlugin(['./dist'], {
+			root: path.resolve(__dirname, ''),
+			verbose: true,
+			dry: false
 		})
 	]
 	// devtool: '#source-map'
